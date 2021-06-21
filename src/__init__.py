@@ -201,7 +201,8 @@ def fetch_boards(boards, force_update=False, path=None):
         # Images in board.
         save_dir = os.path.join(
             "images",
-            os.path.join(*board["url"][1:-1].split("/")),
+            board['owner']['username'],
+            board['name'],
         )
         images_by_directory[save_dir] = fetch_images(
             "https://www.pinterest.com/resource/BoardFeedResource/get/",
@@ -215,7 +216,8 @@ def fetch_boards(boards, force_update=False, path=None):
             # Images in board sections.
             save_dir = os.path.join(
                 "images",
-                os.path.join(*board['url'][1:-1].split("/")),
+                board['owner']['username'],
+                board['name'],
                 section
             )
             images_by_directory[save_dir] = fetch_images(
