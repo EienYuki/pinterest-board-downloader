@@ -3,7 +3,7 @@ from os.path import join, dirname
 
 setup(
     name='pinterest-downloader',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     long_description=open(join(dirname(__file__), 'README.md')).read(),
     entry_points={
